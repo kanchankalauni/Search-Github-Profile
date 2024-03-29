@@ -5,9 +5,13 @@
 // let userFollowing = document.getElementById('userFollowing')
 // let userRepo = document.getElementById('userRepo')
 // let visitProfile = document.getElementById('visitProfile')
+let profileCard = document.getElementById("profileCard")
+let loader = document.getElementById('loader')
 let userImg
 let searchBtn = document.getElementById('searchBtn')
 searchBtn.addEventListener('click', (e) => {
+    profileCard.innerHTML = ""
+    loader.classList.toggle("hidden") 
     // leftCard.remove(userImg)
     search()
 })
@@ -61,7 +65,8 @@ async function search(){
                 </div>
             </div>
         </div>`
-        document.getElementById("profileCard").innerHTML = div
+        profileCard.innerHTML = div
+        loader.classList.toggle("hidden") 
         console.log(div)
         }
     } catch (err) {
