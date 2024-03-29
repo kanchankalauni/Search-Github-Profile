@@ -1,44 +1,22 @@
-// let leftCard = document.getElementById('leftCard')
-// let userName = document.getElementById('userName')
-// let userBio = document.getElementById('userBio')
-// let userFollower = document.getElementById('userFollower')
-// let userFollowing = document.getElementById('userFollowing')
-// let userRepo = document.getElementById('userRepo')
-// let visitProfile = document.getElementById('visitProfile')
 let profileCard = document.getElementById("profileCard")
 let loader = document.getElementById('loader')
 let userImg
 let searchBtn = document.getElementById('searchBtn')
 searchBtn.addEventListener('click', (e) => {
     profileCard.innerHTML = ""
-    loader.classList.toggle("hidden") 
-    // leftCard.remove(userImg)
+    loader.classList.toggle("hidden")
     search()
 })
 
 async function search(){
     try {
         let searchText = document.getElementById('searchText').value
-        // console.log(searchText)
         if (searchText == "") {
             alert("Input field cannot be empty")
         }
         else{
             let profile = await fetch(`https://api.github.com/users/${searchText}`)
             let profileData = await profile.json()
-            // userImg = document.createElement('img')
-            // userImg.setAttribute("src", `${profileData.avatar_url}`)
-            // userImg.setAttribute("height", "100px")
-            // userImg.setAttribute("width", "100px")
-            // leftCard.appendChild(userImg)
-            // userName.innerHTML = profileData.name
-            // userBio.innerHTML = profileData.bio
-            // userFollower.innerHTML = profileData.followers
-            // userFollowing.innerHTML = profileData.following
-            // userRepo.innerHTML = profileData.public_repos
-            // visitProfile.setAttribute("href", `${profileData.html_url}`)
-            // console.log(profileData)
-            // console.log(profileData.avatar_url)
             let div = `<div id="card">
             <div id="leftCard">
                 <img src=${profileData.avatar_url} alt="User Image" id="userImg">    
