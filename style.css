@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #loader {
     width: 50px;
     padding: 8px;
@@ -15,6 +21,80 @@
   }
   @keyframes l3 {to{transform: rotate(1turn)}}
 
-  .hidden{
+.hidden{
     display: none;
-  }
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#profileCard{
+    width: 55%;
+    height: 55%;
+    background-color: rgba(73, 231, 189, 0.936);
+    border-radius: 20px;
+}
+
+#card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftCard{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#userImg{
+    width: 250px;
+    border-radius: 150px;
+}
+
+#rightCard{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#rightCardTop{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rightCardBox{
+    font-size: 150%;
+    font-weight: 500;
+}
+
+#rightCardBottom{
+    background-color: black;
+    padding-top: 1%;
+    border-radius: 20px;
+    width: 70%;
+    height: 10%;
+}
+
+#visitProfileText{
+    font-size: 150%;
+    text-decoration: none;
+    color: white;
+}

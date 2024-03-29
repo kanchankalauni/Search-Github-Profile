@@ -20,26 +20,26 @@ async function search(){
             let div = `<div id="card">
             <div id="leftCard">
                 <img src=${profileData.avatar_url} alt="User Image" id="userImg">    
-                <p id="userName">${profileData.name}</p>
+                <h1 id="userName">${profileData.name}</h1>
                 <p id="userBio">${profileData.bio}</p>
             </div>
             <div id="rightCard">
-                <div>
-                    <div>
+                <div id="rightCardTop">
+                    <div class="rightCardBox">
                         <p>Follower</p>
                         <p id="userFollower">${profileData.followers}</p>
                     </div>
-                    <div>
+                    <div class="rightCardBox">
                         <p>Following</p>
                         <p id="userFollowing">${profileData.following}</p>
                     </div>
-                    <div>
+                    <div class="rightCardBox">
                         <p>Repo</p>
                         <p id="userRepo">${profileData.public_repos}</p>
                     </div>
                 </div>
-                <div>
-                    <a href=${profileData.html_url} id="visitProfile">Visit Profile</a>
+                <div id="rightCardBottom">
+                    <a href=${profileData.html_url} target="_blank" id="visitProfileText">Visit Profile</a>
                 </div>
             </div>
         </div>`
