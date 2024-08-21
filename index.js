@@ -2,17 +2,19 @@ let profileCard = document.getElementById("profileCard")
 let loader = document.getElementById('loader')
 let userImg
 let searchBtn = document.getElementById('searchBtn')
+let inputValue = document.getElementById('searchText')
 
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault()
     profileCard.innerHTML = ""
     loader.classList.toggle("hidden")
     search()
+    inputValue.value = ""
 })
 
 async function search() {
     try {
-        let searchText = document.getElementById('searchText').value
+        let searchText = inputValue.value
 
         if (searchText == "") {
             alert("Input field cannot be empty")
