@@ -26,6 +26,7 @@
 }
 
 #container{
+    background-color: rgb(148, 148, 255);
     width: 100vw;
     height: 100vh;
     text-align: center;
@@ -39,6 +40,10 @@
 #profileCard{
     width: 55%;
     height: 55%;
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(73, 231, 189, 0.936);
     border-radius: 20px;
 }
@@ -97,4 +102,33 @@
     font-size: 150%;
     text-decoration: none;
     color: white;
+}
+
+#heading{
+    font-size: 300%;
+}
+
+.searchBar{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    width: 350px;
+}
+
+#searchText{
+    border: none;
+    outline: none;
+    padding: 3%;
+    margin: 10px;
+    height: 70%;
+    border-radius: 5px;
+}
+
+#searchBtn{
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }

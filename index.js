@@ -2,21 +2,31 @@ let profileCard = document.getElementById("profileCard")
 let loader = document.getElementById('loader')
 let userImg
 let searchBtn = document.getElementById('searchBtn')
+
 searchBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     profileCard.innerHTML = ""
     loader.classList.toggle("hidden")
     search()
 })
 
-async function search(){
+async function search() {
     try {
         let searchText = document.getElementById('searchText').value
+
         if (searchText == "") {
             alert("Input field cannot be empty")
         }
-        else{
+        else {
             let profile = await fetch(`https://api.github.com/users/${searchText}`)
             let profileData = await profile.json()
+
+            if (profile.status === 404) {              // Check if the user is not found
+                profileCard.innerHTML = `<h2>No result found. Please check the username and try again.</h2>`;
+                loader.classList.toggle("hidden");
+                return;
+            }
+
             let div = `<div id="card">
             <div id="leftCard">
                 <img src=${profileData.avatar_url} alt="User Image" id="userImg">    
@@ -42,10 +52,9 @@ async function search(){
                     <a href=${profileData.html_url} target="_blank" id="visitProfileText">Visit Profile</a>
                 </div>
             </div>
-        </div>`
-        profileCard.innerHTML = div
-        loader.classList.toggle("hidden") 
-        console.log(div)
+            </div>`
+            profileCard.innerHTML = div
+            loader.classList.toggle("hidden")
         }
     } catch (err) {
         console.log("Invalid user name")
